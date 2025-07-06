@@ -1,0 +1,105 @@
+:root{
+    --blanco:#ffff;
+    --oscuro:#212121;
+    --primario:#ffbf00;
+    --fondo:#1b1b6b;
+    --gris:#757575;
+    --Menu:#858484;
+    --texto-centrado:Center;
+    --texto-izquierdo:right;
+    --texto-derecho:left; 
+    --bordesCont:1px;
+    --MargeDerTitulo:60px;
+    --padContainer:10px;
+    --TamañoConta:900px;
+    --Tamañopublicidad:400px;
+    --paddingPublic: 10px;
+    --Tamañotarea:550px;
+    --paddingTarea: 8px;
+    --MargenBajTare:5px;
+    --BordeTarea:4px;
+    --TamañoIcon:60px;
+    --MarIconSup:10px;
+    --MargIconIzq:10px;
+    --padicon:9px;
+}
+
+h1 {
+    text-align: var(--texto-centrado);
+    margin-left: var(--MargeDerTitulo);
+    color:var(--blanco);
+}
+
+.icono-menu {
+    border: var(--bordesCont) solid var(--oscuro);
+    padding: var(--padicon);
+    width: var(--TamañoIcon);
+    float: var(--texto-izquierdo);
+    background: var(--blanco);
+    margin-top: var(--MarIconSup);
+    margin-right: var(--MargIconIzq);
+}
+
+.icono-menu img {
+    display: block;
+    margin: 0 auto; 
+}
+
+.container {
+    border: var(--bordesCont) solid var(--Menu);
+    display: flex;
+    padding: var(--padContainer);
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: var(--TamañoConta);
+    margin: 0 auto;
+    color: var(--blanco);
+    background: var(--fondo);
+}
+
+.Publicidad {
+    width: var(--Tamañopublicidad); /* Ajusta el ancho de la publicidad según sea necesario */
+    padding: var(--paddingPublic);
+    box-sizing: border-box;
+    text-align: var(--texto-centrado);
+}
+
+input,
+textarea {
+    width: var(--Tamañotarea);
+    padding: var(--paddingTarea);
+    margin-bottom: var(--MargenBajTare);
+    box-sizing: border-box;
+    border: var(--bordesCont) solid var(--Menu);
+    border-radius: var(--BordeTarea);
+}
+
+
+legend {
+
+    font-size: larger;
+    font-weight: bolder;
+    text-align: var(--texto-centrado);
+    
+}
+
+fieldset.formulario-fieldset {
+    padding: 20px; /* Aumenta el padding dentro del fieldset */
+    border: var(--bordes-cont) solid var(--oscuro);
+    border-radius: 8px; /* Agregado para bordes redondeados */
+    margin-bottom: 20px; /* Aumenta el margen inferior del fieldset */
+}
+
+body {
+    margin: 0;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}

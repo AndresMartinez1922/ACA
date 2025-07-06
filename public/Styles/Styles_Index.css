@@ -1,0 +1,126 @@
+:root{
+    --blanco:#ffff;
+    --oscuro:#212121;
+    --primario:#ffbf00;
+    --fondo:#1b1b6b;
+    --gris:#757575;
+    --Menu:#e7e7e7;
+    --bordes:1px;
+    --basMaringleft:90px;
+    --texto-centrado:Center;
+    --texto-izquierdo:right;
+    --texto-derecho:left;
+    --TitulosCentro: 400px;
+    --tamañoMen:250px;
+    --MenuSup_M:5px;
+    --MenuIzq_M:110px;
+    --AnchoDivInf: 300px;
+    --tamañoCon1: 700px;
+    --padCon1:4px;
+    --MargenLefCon1:50px;
+    --padCon2:1px;
+    --padCon4_5:9px;
+    --MergeDerLogo:90px;
+    --MergeIzqLogo:50px;
+    --TamañoLogo:250px;
+}
+
+a {
+    text-decoration: none;
+    color:var(--oscuro);
+    /* Cambia el color del texto de los enlaces */
+}
+
+.menu-container {
+    border: var(--bordes) solid var(--oscuro);
+    margin-right: var(--MenuIzq_M);
+    margin-top: var(--MenuSup_M);
+    text-align: var(--texto-centrado);
+    width: var(--tamañoMen);
+    float: var(--texto-izquierdo); /* Mueve el menú a la derecha */
+    background: var(--Menu);
+}
+
+.Contenido {
+    border: var(--bordes) solid var(--oscuro);
+    padding: var(--padCon1);
+    float: var(--texto-centrado);
+    width: var(--tamañoCon1);
+    margin-left: var(--MargenLefCon1);
+    background: var(--blanco);
+}
+
+#Contenido2 {
+    border: var(--bordes) solid var(--oscuro);
+    padding: var(--padCon2);
+    float: var(--texto-derecho);
+    width: var(--AnchoDivInf);
+    margin-left: var(--basMaringleft);
+    background: var(--blanco);
+}
+
+.Contenido3 {
+    border: var(--bordes) solid var(--oscuro);
+    float: var(--texto-derecho);
+    width: var(--AnchoDivInf);
+    margin-left: var(--basMaringleft);
+    background:var(--blanco);
+}
+
+#Contenido4 {
+    border: var(--bordes) solid var(--oscuro);
+    padding: var(--padCon4_5);
+    float: var(--texto-derecho);
+    width: var(--AnchoDivInf);
+    margin-left: var(--basMaringleft);
+    background: var(--blanco);
+}
+
+.Contenido5 {
+    border: var(--bordes) solid var(--oscuro);
+    padding: var(--padCon4_5);
+    float: var(--texto-derecho);
+    width: var(--AnchoDivInf);
+    margin-left: var(--basMaringleft);
+    background: var(--blanco);
+}
+
+h1,
+h2 {
+    margin-left: var(--TitulosCentro);
+    color:var(--blanco);
+}
+
+.logo img {
+    border: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-left: var(--MergeDerLogo);
+    margin-top: var(--MergeIzqLogo);
+    width: var(--TamañoLogo);
+}
+
+.Imagenes {
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.Hiper{
+    margin-left: 100px;
+}
+
+body {
+    background: var(--fondo);
+    margin: 0;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}

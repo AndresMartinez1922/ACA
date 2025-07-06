@@ -1,0 +1,125 @@
+:root{
+    --blanco:#ffff;
+    --oscuro:#212121;
+    --primario:#ffbf00;
+    --fondo:#1b1b6b;
+    --gris:#757575;
+    --Menu:#e7e7e7;
+    --texto-centrado:Center;
+    --texto-izquierdo:right;
+    --texto-derecho:left; 
+    --TamañoConte:300px;
+    --bordesCont:1px;
+    --padicon:9px;
+    --TamañoIcon:60px;
+    --MarIconSup:10px;
+    --MargIconIzq:10px;
+    --tamañoConPri:900px;
+    --PanConPri:2px;
+    --MarDerConPri:120px;
+    --MargDereCon2:90px;
+    --MargDereCon3:90px;
+    --MargeDerecCon4:90px;
+    --padCon4:1px;
+    --MargeDerecCon5:90px;
+    --TamañoTitulo:200px;
+    --TamañoSubtituli:120px;
+    --MargenImaLogoTop:30px;
+    --MargenImaLogoleft:20px;
+}
+        .icono-menu {
+            border: var(--bordesCont) solid var(--oscuro);
+            padding: var(--padicon);
+            width: var(--TamañoIcon);
+            float: var(--texto-izquierdo);
+            background: var(--blanco);
+            margin-top: var(--MarIconSup);
+            margin-right: var(--MargIconIzq);
+        }
+        .icono-menu img {
+            display: block;
+            margin: 0 auto; 
+        }
+
+        .Contenido {
+            border: var(--bordesCont) solid var(--oscuro);
+            padding: var(--PanConPri);
+            float: var(--texto-centrado);
+            width: var(--tamañoConPri);
+            margin-left: var(--MarDerConPri);
+            background: var(--blanco);
+        }
+
+        .Contenido2 {
+            border: var(--bordesCont) solid var(--oscuro);
+            float: var(--texto-derecho);
+            width: var(--TamañoConte);
+            margin-left: var(--MargDereCon2);
+            background: var(--blanco);
+        }
+
+        .Contenido3 {
+            border: var(--bordesCont) solid var(--oscuro);
+            float: var(--texto-derecho);
+            width: var(--TamañoConte);
+            margin-left: var(--MargDereCon3);
+            background: var(--blanco);
+
+        }
+        .Contenido4 {
+            border: var(--bordesCont) solid var(--oscuro);
+            padding: var(--padCon4);
+            float: var(--texto-derecho);
+            width: var(--TamañoConte);
+            margin-left: var(--MargeDerecCon4);
+            background: var(--blanco);
+        }
+
+        .Contenido5 {
+            border: var(--bordesCont) solid var(--oscuro);
+            float: var(--texto-derecho);
+            width: var(--TamañoConte);
+            margin-left: var(--MargeDerecCon5);
+            background: var(--blanco);
+        }
+        h1 {
+            margin-left: var(--TamañoTitulo);
+            color: var(--blanco);
+        }
+
+        h2 {
+            margin-left: var(--TamañoSubtituli);
+            color: var(--blanco);
+        }
+
+        .SF {
+            display: block;
+            position: absolute;
+            top: 0;
+            margin-top: var(--MargenImaLogoTop);
+            margin-left: var(--MargenImaLogoleft);
+        }
+
+        .Image {
+            display: block;
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+
+        #Image {
+            display: block;
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+
+        body {
+            margin: 0;
+        }
+        
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }

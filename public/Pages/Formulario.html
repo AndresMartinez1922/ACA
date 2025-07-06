@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Anime</title>
+    <link rel="stylesheet" href="../Styles/Styles_Formulario.css">
+    <video src="../Video/Formulario.mp4" autoplay loop></video>
+</head>    
+
+<body>
+    <main>
+
+        <div class="icono-menu">
+            <a href="../Pages/Contactanos.html"><img src="../Icons/casa.png" width="50" height="50"></img></a>
+            <p align="center">Regresar</p>
+        </div>
+        <h1>Formulario de Contacto</h1>
+        <div class="container">
+            <div class="Publicidad">
+                <p align="center"><strong>Redes Sociales</strong></p>
+                <img src="../Images/plan-redes-sociales.png" width="235" height="235">
+                <p align="center"><br>Facebook: @mundoanimeorg <br>
+                    Twitter: @mundoanimeorg <br>
+                    Instagram: @mundoanimeorg</p>
+            </div>
+<form id="contactForm">
+  <fieldset class="formulario-fieldset">
+    <legend>Ingrese sus datos personales y pronto nos comunicaremos con usted</legend>
+
+    <div>
+      <label>Nombre:</label>
+      <input type="text" name="Nombre" placeholder="Escribe tu Nombre" required />
+    </div>
+    <div>
+      <label>Numero Telefónico:</label>
+      <input type="number" name="Telefono" placeholder="Digite su numero de Teléfono" required />
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="email" name="Email" placeholder="Ingrese su correo Electrónico" required />
+    </div>
+    <div>
+      <label>Observaciones:</label>
+      <textarea name="Observaciones" rows="5" required></textarea>
+    </div>
+    <div class="checkbox">
+      <label>Está de acuerdo con el uso de sus Datos:</label>
+      <input type="checkbox" name="UsoDatos" value="1" />
+    </div>
+    <div>
+      <button type="submit">Enviar</button>
+    </div>
+  </fieldset>
+</form>
+
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {
+      Nombre: formData.get("Nombre"),
+      Telefono: formData.get("Telefono"),
+      Email: formData.get("Email"),
+      Observaciones: formData.get("Observaciones"),
+    //  UsoDatos: formData.get("UsoDatos") ? 1 : 0,
+    };
+
+    // Validación rápida
+    if (!data.Nombre || !data.Telefono || !data.Email || !data.Observaciones) {
+      alert("Por favor complete todos los campos.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/api/formulario", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        window.location.href = "/Index.html";
+      } else {
+        const error = await response.text();
+        alert("Error al guardar: " + error);
+      }
+    } catch (error) {
+      console.error("Error de red:", error);
+      alert("No se pudo conectar al servidor.");
+    }
+  });
+</script>
