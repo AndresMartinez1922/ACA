@@ -46,8 +46,8 @@ app.post('/api/formulario', (req, res) => {
   }
 
   const sql = `
-    INSERT INTO datos (Nombre, Telefono, Email, Observaciones, UsoDatos)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO datos (Nombre, Telefono, Email)
+    VALUES (?, ?, ?)
   `;
 
   db.query(sql, [Nombre, Telefono, Email, Observaciones, UsoDatos ? 1 : 0], (err, result) => {
