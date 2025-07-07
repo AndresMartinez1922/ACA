@@ -32,10 +32,9 @@ db.connect(err => {
   }
 });
 
-// Ruta principal
 app.get('/', (req, res) => {
-  res.send('Bienvenido a Mundo Anime 🚀');
-});
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});a
 
 // Ruta para guardar el formulario
 app.post('/api/formulario', (req, res) => {
