@@ -34,7 +34,7 @@ db.connect(err => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});a
+});
 
 // Ruta para guardar el formulario
 app.post('/api/formulario', (req, res) => {
