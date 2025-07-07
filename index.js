@@ -38,6 +38,7 @@ db.connect(err => {
 
 // Ruta principal
 app.get('/', (req, res) => {
+  res.send('Bienvenido');
 });
 
 // Ruta para procesar formulario
