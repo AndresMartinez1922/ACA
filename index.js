@@ -38,7 +38,8 @@ db.connect(err => {
 
 // Ruta principal
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'Index.html'));
+
 });
 
 // Ruta para procesar formulario
