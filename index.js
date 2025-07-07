@@ -5,15 +5,14 @@ const fs = require('fs');
 const app = express();
 require('dotenv').config();
 
-app.set('port', 3000);
+// Usar puerto dinámico para Render
+const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.json()); // Para leer JSON desde el body
-
-// Servir archivos estáticos
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Conexión a la base de datos
+
 const db = mysql.createConnection({
   host: 'acaclud-cun-d6f0.j.aivencloud.com',
   port: 23395,
@@ -24,24 +23,21 @@ const db = mysql.createConnection({
     ca: fs.readFileSync('./public/file/ca.pem')
   }
 });
-
-
-
+// Verificar conexión
 db.connect(err => {
   if (err) {
-    console.error('Error al conectar a la base de datos:', err);
-
+    console.error('❌ Error al conectar a la base de datos:', err);
   } else {
-    console.log('Conectado a la base de datos MySQL');
+    console.log('✅ Conectado a la base de datos MySQL en Aiven');
   }
 });
 
 // Ruta principal
 app.get('/', (req, res) => {
-  res.send('Bienvenido');
+  res.send('Bienvenido a Mundo Anime 🚀');
 });
 
-// Ruta para procesar formulario
+// Ruta para guardar el formulario
 app.post('/api/formulario', (req, res) => {
   const { Nombre, Telefono, Email, Observaciones, UsoDatos } = req.body;
 
@@ -49,17 +45,21 @@ app.post('/api/formulario', (req, res) => {
     return res.status(400).send("Por favor complete todos los campos.");
   }
 
-  const sql = "INSERT INTO datos (Nombre, Telefono, Email) VALUES (?, ?, ?)";
-  db.query(sql, [Nombre, Telefono, Email ? 1 : 0], (err, result) => {
+  const sql = `
+    INSERT INTO datos (Nombre, Telefono, Email, Observaciones, UsoDatos)
+    VALUES (?, ?, ?, ?, ?)
+  `;
+
+  db.query(sql, [Nombre, Telefono, Email, Observaciones, UsoDatos ? 1 : 0], (err, result) => {
     if (err) {
-      console.error('Error al guardar:', err);
-      return res.status(500).send("Error en el servidor al guardar los datos.");
+      console.error('❌ Error al guardar:', err);
+      return res.status(500).send("Error al guardar los datos.");
     }
-    res.send("Formulario guardado correctamente");
+    res.send("✅ Formulario guardado correctamente");
   });
 });
 
-// Iniciar el servidor
-app.listen(app.get('port'), () => {
-  console.log(`Aplicación en ejecución en el puerto ${app.get('port')}`);
+// Iniciar servidor
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Aplicación en ejecución en el puerto ${PORT}`);
 });
